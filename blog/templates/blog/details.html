@@ -1,0 +1,12 @@
+{%extends 'portfolio/base.html'%}
+
+{%block title%}Details{%endblock%}
+
+{% block content%}
+
+<div class="container">
+<h2 class="text-center mt-5" id="blogdetailtitle">{{blog.title}}</h2>
+<h4 class="text-center text-muted mb-5">{{blog.date|date:'d M Y'}}</h4>
+<p>{{blog.description|safe}}</p>
+</div>
+{%endblock%}

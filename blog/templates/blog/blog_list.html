@@ -1,0 +1,14 @@
+{%extends 'portfolio/base.html'%}
+{%block title%}All blogs{%endblock%}
+{% block content%}
+
+<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+<h3 class="text-center mb-5"> Total {{allposts.count}} blog{{allposts.count|pluralize}}</h3>
+
+{% for post in allposts%}
+<a href="{%url 'post:details' post.id%}"><h2>{{post.title}}</h2></a>
+<h5>{{post.date|date:'d M Y'}}</h4>
+<p>{{post.description|striptags|truncatechars:200}}</p>
+{%endfor%}
+
+{%endblock%}
